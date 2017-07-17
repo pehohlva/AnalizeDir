@@ -14,8 +14,7 @@ Usage: readdirs (Options)
   
   
   
-  Sample output:
-  
+Sample output:
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 FreeSpace home:53.09 GB
 Vediamo come procede...
@@ -27,7 +26,7 @@ QD name: "osx"
 QD size: "225.81 GB"
 QD availableSize: "53.09 GB"
 Dir Handle:/usr/local
-  
+....................
 286 > /usr/local/Homebrew/Library/Homebrew/os/mac/pkgconfig/10.10/libcurl.pc.
 287 > /usr/local/Homebrew/Library/Homebrew/os/mac/pkgconfig/10.10/libexslt.pc.
 288 > /usr/local/Homebrew/Library/Homebrew/os/mac/pkgconfig/10.10/libxml-2.0.pc.
@@ -72,12 +71,12 @@ Dir Handle:/usr/local
 327 > /usr/local/Homebrew/Library/Homebrew/os/mac/pkgconfig/10.9/zlib.pc.
 328 > /usr/local/Homebrew/Library/Homebrew/os/mac/pkgconfig/fuse/fuse.pc.
 329 > /usr/local/Homebrew/Library/Homebrew/os/mac/pkgconfig/fuse/osxfuse.pc.
-------------
+....................
 460 > /usr/local/share/pkgconfig/mariadb.pc.
 461 > /usr/local/share/pkgconfig/poppler-data.pc.
 462 > /usr/local/share/pkgconfig/shared-mime-info.pc.
 Trovati totale: 462 Timesec:50..........
-
+....................
 
   
   
