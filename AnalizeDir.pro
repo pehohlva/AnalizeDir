@@ -5,7 +5,7 @@ TEMPLATE = app
 
 CONFIG += c++11
 
-TARGET = readdirs
+TARGET = sdir
 CONFIG += console
 CONFIG -= app_bundle
 

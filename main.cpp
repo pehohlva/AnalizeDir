@@ -16,10 +16,12 @@ const int pointo = 76;
 // dotslong sono i punti da fare.....
 
 static void usagethisapp(const char *name, int size) {
+
+    QString hdir = QDir::homePath();
     printf("Usage: %s (Options)  \n", name);
     printf(" {%d} Options:\n", size);
     printf("\t--set or -s pdf ... : Set file extension to read by disk. \n");
-    printf("\t--dir or -d /Users/ ... : Set dir to begin read on by disk. \n");
+    printf("\t--dir or -d /Users/ ... : Set dir to begin read on by disk. Default init on %s \n",datain(hdir));
     printf("\t--version or -V: show the version of conversion used\n");
     printf("\t--help or -h: display this text.\n");
 }

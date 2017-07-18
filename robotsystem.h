@@ -29,6 +29,12 @@ static inline bool fwriteutf16(QString fullFileName,QString xml)
         return false;
 }
 
+//// qt 4/5 compatible?
+static inline char *datain( QString d ) {
+  QByteArray ba = d.toLatin1();
+  return ba.data();
+}
+
 
 namespace IndexDisk {
 
