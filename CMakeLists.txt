@@ -22,3 +22,9 @@ set(SOURCES
 add_executable(analizedir ${SOURCES} )
 target_link_libraries(analizedir Qt5::Core)
 set(PROJECT_OUTPUT_NAME "analizedir")
+
+
+set(EXECUTABLE_OUTPUT_PATH "/Users/dev/Applications/qt5.9.1/bin")
+
+message(["EXECUTABLE_OUTPUT_PATH" ${EXECUTABLE_OUTPUT_PATH} )
+message(["End line from cmakelist.txt ................ :-)")

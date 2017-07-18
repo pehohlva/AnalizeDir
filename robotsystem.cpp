@@ -11,6 +11,7 @@ Robotsystem::Robotsystem(const QString Followdir , const QString extension)
    EXTENSION = extension.toLower();
    QTextStream out(stdout);
    SystemDIRS.clear();
+   FoundResults.clear();
    Dirscount = 0;
    Filefinded = 0;
    MODUS_READ = 2;
@@ -26,15 +27,11 @@ Robotsystem::Robotsystem(const QString Followdir , const QString extension)
        if (storage.isReadOnly()) {
            qDebug() << "QD isReadOnly:" << storage.isReadOnly();
        }
-
-
        qDebug() << "QD fileSystemType:" << storage.fileSystemType();
        qDebug() << "QD device:" << storage.device();
        qDebug() << "QD name:" << storage.name();
        qDebug() << "QD size:" << bytesToSize(storage.bytesTotal()) ;
        qDebug() << "QD availableSize:" << bytesToSize(storage.bytesAvailable());
-
-
 
    if (storage.name() == "osx") {
        ////  Followdir = storage.rootPath();
@@ -52,6 +49,10 @@ Robotsystem::Robotsystem(const QString Followdir , const QString extension)
                    ///// }
                    this->followOneDir(hdir.absolutePath());
                }
+
+               out << "Save to file? write name:\n";
+               out.flush();
+               ///// end ...
 }
 
 void Robotsystem::followOneDir( const QString &namepathfull ) {
@@ -79,18 +80,20 @@ void Robotsystem::followOneDir( const QString &namepathfull ) {
                     linewritteln.resize(40);
                     out << linewritteln  << "\r";
                 }
-
+                   out.flush();
               }
                 if (QFileInfo(dirIt.filePath()).isFile()) {
                     if (QFileInfo(dirIt.filePath()).suffix() == EXTENSION ) {
                          Filefinded++;
                          const qint64 sizefullfromfile = dirIt.filePath().size();
+                         FoundResults.append(dirIt.filePath());
                          out << Filefinded << " > " <<  dirIt.filePath()  << ".\n";
                          out.flush();
                          /// qDebug()<<dirIt.filePath();
                       }
                 }
     }
+    out.flush();
 }
 
 bool Robotsystem::RecordAppend( const QString &name, const int &typex )

@@ -28,6 +28,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     QTextStream out(stdout);
+    QString fname;
+    QTextStream cin(stdin);
     QString nameout;
     QString namedirbeginn;
     QString str("*");
@@ -90,13 +92,32 @@ int main(int argc, char *argv[])
             namedirbeginn = QDir::homePath();
           }
         IndexDisk::Robotsystem *treedir = new IndexDisk::Robotsystem(namedirbeginn,nameout);
+            out << "\n";
+            out << "\n";
         const int found = treedir->foundTotalFile();
+        QString founditemstream =  treedir->foundFile().join("\n");
         //// first method = 278 sec.  /// 203 la seconda ... 293odt
         int nseconds = myTimer.elapsed() / 1000;
-
-        out << "Trovati totale: ";
-        out << found << " Timesec:" << nseconds <<   "\n";
-        out.flush();
-        return (1);
+            out << "Trovati totale: ";
+            out << found << " Timesec:" << nseconds <<   "\n";
+            out << "\n";
+            out << "\n";
+            out << "Salva in file? Save to file result? filename: " << "\n";
+            out << "\n";
+            fname = cin.readLine();
+            out << "\n";
+            out << "\n";
+            ///// out << "save to: " << fname;
+            if (fname.size() > 2 ) {
+                if (fwriteutf16(fname,founditemstream)) {
+                    out << "save to: " << fname;
+                  }
+              } else {
+                out << "remove results..\n ";
+              }
+            out << "\n";
+            out.flush();
+            a.deleteLater();
+            return 0;
         return a.exec();
 }

@@ -1,6 +1,7 @@
 #ifndef BASIC_HELPER_H
 #define BASIC_HELPER_H
 
+///// basic console apps include start
 #include <QCoreApplication>
 #include <QObject>
 #include <QFile>
@@ -19,6 +20,8 @@
 #include <QDirIterator>
 #include <QStorageInfo>
 #include <QCryptographicHash>
+
+///// basic console apps include end
 
 
 #if defined(Q_OS_SYMBIAN)
