@@ -16,7 +16,7 @@ OBJECTS_DIR = z_build/.obj
 
 
 
-BINDIR = /Users/dev/Applications/qt5.9.1/bin
+BINDIR = /usr/local/opt/qt@5.5/bin
 target.path = $$BINDIR
 INSTALLS += target
 
